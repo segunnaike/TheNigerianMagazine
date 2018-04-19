@@ -1,0 +1,94 @@
+<!--THIS IS TO ADD NEW ARTICLES/POSTS TO THE MAGAZINE-->
+
+<% include ../partials/header %>
+
+<section class="new-article-form-section">
+     <div class="row">
+         <h1 class="submit-your-story-title">Submit Your Story</h1>
+         <p class="required-field">* Denotes Required Fields</p>
+     </div>
+  
+      <div class="row">       
+       <form class="new-article-form" action="/" method="POST">
+           <div class="row">
+               <div class="col span-1-of-3 label">
+                   <label for="title">Title *:</label>
+               </div>
+               <div class="col span-2-of-3">
+                   <input type="text" name="title" placeholder="Add Story Title" required>
+               </div>
+           </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="imageOne">First Image *:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="imageOne" placeholder="Add First Image" required>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="imageTwo">Second Image:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="imageTwo" placeholder="Add Second Image">                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="imageThree">Third Image:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="imageThree" placeholder="Add Third Image">                
+            </div>
+        </div>
+        
+                
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="body">Story Content *:</label>
+            </div>
+            <div class="col span-2-of-3">
+                <textarea name="body" placeholder="Add Story Here..."></textarea>                               
+            </div>
+        </div>
+        
+        
+        
+        <div class="row">
+           <div class="col span-1-of-3 label">
+              <label for="category">Choose Story Category *:</label>               
+           </div>
+           <div class="col span-2-of-3">                
+                <select name="category">
+                     <option value="#" selected>Choose a category</option>
+                     <option value="business">business</option>
+                     <option value="culture">culture</option>
+                     <option value="entertainment">entertainment</option>
+                     <option value="fashion">fashion</option>
+                     <option value="headlines">headlines</option>
+                     <option value="news">news</option>
+                     <option value="opinions">opinions</option>
+                     <option value="politics">politics</option>
+                     <option value="religion">religion</option>
+                     <option value="sports">sports</option>
+                 </select>
+            </div>
+            
+            <div class="col span-2-of-3"> 
+                <input value="Submit Story" type="submit">                
+                <a href="/"><button type="button" class="cancelBtn">Cancel</button></a>                
+           </div>                 
+           </div>
+        </form>
+     </div>
+  </section>
+
+
+
+<% include ../partials/footer %>
+
+ 

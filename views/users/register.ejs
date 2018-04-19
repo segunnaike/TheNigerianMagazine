@@ -1,0 +1,131 @@
+
+<!--THIS IS TO SIGN UP AS A NEW USER/CONTRIBUTOR/AUTHOR -->
+
+<% include ../partials/header %>
+
+
+<section class="register-form-section">
+  <div class="row">
+      <h1 class="register-title">Register</h1>
+      <p class="register-text">Please fill this form to register as an author.</p>
+  </div>
+  <div class="row">
+     <form action="/register" method="POST" class="register-form">
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="firstName">First Name:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="firstName" placeholder="First Name" required>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="lastName">Last Name:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="lastName" placeholder="Last Name" required>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="lastName">Username:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="username" placeholder="Create Username" required>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="password">Password:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="password" name="password" placeholder="Enter Password" required>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="email">Email:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="email" name="email" placeholder="Enter Email" required>                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="facebook">Facebook Page:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="facebookPage" placeholder="Add Your Facebook Page URL">                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="twitter">Twitter Handle:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="twitterHandle" placeholder="Add Your Twitter Handle">                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="instagram">Instagram Page:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="instagramPage" placeholder="Add Your Instagram Profile">                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="profilePicture">Profile Picture:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="text" name="profilePicture" placeholder="Add a Profile Picture">                
+            </div>
+        </div>
+         
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="adminCode">Admin Code:</label>
+            </div>
+            <div class="col span-2-of-3">
+               <input type="password" name="adminCode" placeholder="Enter Admin Code (if you have one)">                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col span-1-of-3 label">
+                <label for="bio">Tell Us About Yourself:</label>
+            </div>
+            <div class="col span-2-of-3">
+                <textarea name="bio" placeholder="Tell us about yourself in 200 words or less"></textarea>                               
+            </div>
+        </div>
+        
+        <div class="row">
+           <div class="col span-1-of-3">
+              <label>&nbsp;</label>               
+           </div>
+           <div class="col span-2-of-3"> 
+                <input value="Register" type="submit">                
+                <a href="/"><button type="button" class="cancelBtn">Cancel</button></a>                
+           </div>
+        </div>
+        
+        <p class="register-text">By creating an author account, you agree to our <a href="#">Terms &amp; Privacy Conditions</a>.</p>
+        </form>
+     </div>
+  </section>
+
+
+<% include ../partials/footer %>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Nigerian Magazine is an online magazine of commentary, criticisms, cartoons, infographics, essays, fiction, satire, poetry and reportage about Nigeria and Nigerians, home and abroad. We are committed to help build an egalitarian society that promotes social justice, peace, prosperity and unity. Through a fair and balanced reporting, we hope to make our leaders give account of their stewardship, and teach citizens to ask pertinent and probing questions about how they are governed. Our articles and contents cover an eclectic array of topics, with a greater focus on issues that touch the lives of Nigerians at home and abroad.">      
+        <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/grid.css">       
+        <link rel="stylesheet" type="text/css" href="/stylesheets/ionicons.min.css">       
+        <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">                       
+        <link rel="stylesheet" type="text/css" href="/stylesheets/inner.css"> 
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Economica:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> 
+        <title>The Nigerian Mag</title>        
+    </head>
+    <!--END OF HEAD SECTION-->
+   
+    <!--START OF BODY SECTION-->
+    <body>
+        <header>   
+                <a href="/"><img class="header-logo" alt="The Nigerian Magazine Logo" src="/img/Logo_Official.png"></a>
+                <ul class="userMenu">
+                    <li><a class="submit" href="/new">Submit A Story</a></li>
+                    <% if(!currentUser) { %>
+                        <li><a class="submit" href="/login">Login</a></li>
+                        <li><a class="submit" href="/Register">Register</a></li>
+                    <% } else { %>                       
+                        <li><a class="submit" href="/logout">Logout</a></li>
+                        <li><a class="currentuser" href="#">Signed in as <%= currentUser.firstName %></a></li>
+                    <% } %>
+                    
+                    <li class="search"><input type="search" name="" placeholder="Search"> <i class="ion-ios-search"></i></li>
+                </ul>                
+            <nav>
+                <div class="row">
+                    <div class="col span-3-of-3 main-nav">
+                        <ul>                          
+                            <li><a href="/headlines">Headlines</a></li>                       
+                            <li><a href="/business">Business &amp; Tech</a></li>
+                            <li><a href="/fashion">Fashion &amp; Style</a></li>
+                            <li><a href="/entertainment">Entertainment</a></li>
+                            <li><a href="#">Across The Web<i class="ion-arrow-down-b"></i></a>
+                               <ul>
+                                   <li><a href="/sports">News</a></li>
+                                   <li><a href="/religion">Politics</a></li>
+                                   <li><a href="/culture">Sports</a></li>
+                                   <li><a href="/politics">Culture</a></li>
+                                   <li><a href="/news">Religion</a></li>
+                               </ul>                           
+                            </li>
+                            <li><a href="/opinions">Opinions</a></li>
+                            <li class="tnm4kids"><a href="/">TNM4Kids</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <hr>
+        </header>
+        
+        <div class="row">
+            
+            <% if(error && error.length > 0){ %>
+            <div class="row error-message">
+                <h3><%= error %></h3>
+            </div>
+            <% } %>
+            
+            <% if(success && success.length > 0){ %>
+            <div class="row success-message">
+                <h3><%= success %></h3>
+            </div>
+            <% } %>
+            
+        </div>

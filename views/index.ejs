@@ -1,0 +1,176 @@
+
+<% include ./partials/header %>
+
+
+<!--THIS IS THE HOME PAGE!-->
+<section class="headlines-section">
+
+<div class="row">    
+    <% businessBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-4 headlines-sidebar-container">
+        <img src="<%= blog.imageOne %>">
+        <p class="hs-sidebar-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
+    </div>
+<% }); %>
+    
+<% headlinesBlogs.forEach(function(blog){ %> 
+    <div class="col span-2-of-4 headlines-story-container">
+        <img class="headline-image" src="<%= blog.imageOne %>">        
+        <h4 class="hs-category"><a href="/headlines"><%=blog.category%></a></h4>        
+        <h3 class="hs-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+        <p class="hs-story-intro"><%- blog.body.substring(0, 250) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->        
+        
+        <div class="col span-1-of-2 hs-author-box">
+            <a href="/"><img src="<%=blog.author.profilePicture %>"></a>
+        </div>
+        
+         <div class="col span-1-of-2 hs-author-text">
+            <h5 class="hs-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h5>
+        </div>
+            
+        <!-- <p class="date">Published:\ <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></p> --> <!--the doDateString method converts date to a more human friendly dates, the momentJS library converts date strings into customized dates -->
+         
+        
+    </div>
+<% }); %>
+    
+<% newsBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-4 headlines-sidebar-container">
+        <img src="<%= blog.imageOne %>">
+        <p class="hs-sidebar-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
+    </div>
+<% }); %>
+    
+     <% politicsBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-4 headlines-sidebar-container">
+        <img src="<%= blog.imageOne %>">        
+        <p class="hs-sidebar-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
+    </div>
+<% }); %> 
+
+</div>
+</section>
+
+<section class="whats-hot">
+      <div class="row">
+       <div class="row">
+           <h1>What's Hot</h1>
+       </div>
+       
+       <div class="row">
+       <% sportsBlogs.forEach(function(blog){ %>
+       
+       <div class="col span-1-of-4">
+           <img src="<%= blog.imageOne %>">
+       </div>
+       
+       <div class="col span-2-of-4">
+           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       </div>
+        
+        <div class="col span-1-of-2"> 
+            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        </div>
+        <% }); %>
+        </div>
+        
+        <div class="row">
+       <% fashionBlogs.forEach(function(blog){ %>
+       
+       <div class="col span-1-of-4">
+           <img src="<%= blog.imageOne %>">
+       </div>
+       
+       <div class="col span-2-of-4">
+           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       </div>
+        
+        <div class="col span-1-of-2"> 
+            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        </div>
+        <% }); %>
+        </div>
+        
+        <div class="row">
+       <% entertainmentBlogs.forEach(function(blog){ %>
+       
+       <div class="col span-1-of-4">
+           <img src="<%= blog.imageOne %>">
+       </div>
+       
+       <div class="col span-2-of-4">
+           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       </div>
+        
+        <div class="col span-1-of-2"> 
+            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        </div>
+        <% }); %>
+        </div>
+        
+        <div class="row">
+       <% religionBlogs.forEach(function(blog){ %>
+       
+       <div class="col span-1-of-4">
+           <img src="<%= blog.imageOne %>">
+       </div>
+       
+       <div class="col span-2-of-4">
+           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       </div>
+        
+        <div class="col span-1-of-2"> 
+            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        </div>
+        <% }); %>
+        </div>
+        
+        <div class="row">
+       <% cultureBlogs.forEach(function(blog){ %>
+       
+       <div class="col span-1-of-4">
+           <img src="<%= blog.imageOne %>">
+       </div>
+       
+       <div class="col span-2-of-4">
+           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       </div>
+        
+        <div class="col span-1-of-2"> 
+            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        </div>
+        <% }); %>
+        </div>
+    </div>
+</section>
+
+
+
+<% include ./partials/footer %>
+
+<!--<img src="./images/family.jpg">-->
+

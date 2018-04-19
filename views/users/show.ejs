@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<section class="user-profile">
+    <div class="row">
+        <div class="row">
+            <h1><%= user.firstName + " " + user.lastName %></h1>        
+        </div>
+        <div class="row">
+            <img src="<%= user.profilePicture %>" alt="user profile picture">
+            <p><a href="mailto:<%= user.email %>"><%= user.email %></a></p>
+        </div>
+        <div class="row">
+            <p><%= user.bio %></p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <ul>
+            <% blogs.forEach(function(blog){ %>
+            <li><a href="/<%= blog._id %>"><%= blog.title %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+</section>
+
+
+<% include ../partials/footer %>
+

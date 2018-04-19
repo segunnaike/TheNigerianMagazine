@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<section>
+    <div class="row">
+    
+<% headlinesBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-3 headlines-story-container">
+        <img class="headline-image" src="<%= blog.imageOne %>">        
+        <p class="hs-category"><a href="/headlines"><%=blog.category%></a></p>        
+        <h3 class="hs-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+        <p class="hs-story-intro"><%- blog.body.substring(0, 200) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->        
+        
+        <div class="col span-1-of-2 hs-author-box">
+            <a href="/"><img src="<%=blog.author.profilePicture %>"></a>
+        </div>
+        
+         <div class="col span-1-of-2 hs-author-text">
+            <h5 class="hs-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h5>
+        </div>
+            
+        <!-- <p class="date">Published:\ <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></p> --> <!--the doDateString method converts date to a more human friendly dates, the momentJS library converts date strings into customized dates -->
+         
+        
+    </div>
+<% }); %>
+    </div>
+</section>
+
+<% include ../partials/footer %>
+

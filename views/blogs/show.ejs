@@ -1,0 +1,37 @@
+<!--THIS IS THE INNER PAGE THAT WILL DISPLAY ARTICLES ON THE MAGAZINE-->
+
+<% include ../partials/header %>
+<section>
+ <div class="row">
+      <div class="row">
+        <p class="article-category"><a href="/<%= blog.category %>"><%=blog.category%></a></p>
+        <h1 class="article-title"><%= blog.title %></h1>
+                 
+                 <div>
+                 <a href="/users/<%= blog.author.id %>"><img class="authorProfilePicture" src="<%= blog.author.profilePicture %>"></a></div>
+                 
+                 <div>
+                 <p class="authorName"><a href="/users/<%= blog.author.id %>">By <%= blog.author.firstName %> <%= blog.author.lastName %></a>
+                 </p>
+                 <p class="articleDate">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></p>
+                 </div>
+        </div>
+        
+         <hr class="story-divider">
+         <a href="#"><img class="imageOne" src="<%= blog.imageOne %>"></a>
+         
+        <div class="story-lead">
+            <p><%- blog.body %></p>
+         </div>
+         
+        <% if(currentUser && blog.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+            <a href="/<%= blog._id %>/edit"><button type="button" class="editBtn">Edit Post</button></a>
+            <form  id="delete-post" action="/<%= blog._id %>?_method=DELETE" method="POST">
+                   <input value="Delete" type="submit">
+<!--                <button type="submit" class="deleteBtn">Delete</button>        -->
+            </form>
+        <% } %> 
+     </div>         
+ </section>
+
+<% include ../partials/footer %>

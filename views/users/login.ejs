@@ -1,0 +1,34 @@
+<!--THIS IS USED TO LOGIN USERS/AUTHORS/CONTRIBUTORS INTO THEIR PROFILE PAGES -->
+
+<% include ../partials/header %>
+
+
+
+<div class="row">
+    <div class="row">
+        <div class="row">
+            <h1>LOGIN HERE!</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="row">        
+        <form class="user-forms login" action="/login" method="POST">
+           
+            <div class="row">                
+                <input type="text" name="username" placeholder="username">
+            </div>
+            <div class="row">                
+                <input type="password" name="password" placeholder="password">
+            </div>
+                         
+            <div class="row">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>
+
