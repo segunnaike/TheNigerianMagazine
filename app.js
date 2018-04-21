@@ -25,7 +25,7 @@ var blogRoute = require("./routes/blog");
 
 
 // APPLICATION CONFIG
-mongoose.connect("mongodb://localhost/tnm_blog_app"); //used to connect to our database
+mongoose.connect(process.env.DATABASEURL); //used to connect to our database
 app.locals.moment = require("moment"); //used to format dates
 app.set("view engine", "ejs"); //used to create page templates
 app.use(express.static(__dirname + "/public")); //used to tell the app to use the public directory
