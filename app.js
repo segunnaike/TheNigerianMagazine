@@ -11,6 +11,11 @@ var expressSanitizer    =   require("express-sanitizer"),
     async               =   require("async"),
     app                 =   express();
 
+
+var MongoClient = require('mongodb').MongoClient;
+
+
+
 // requiring models 
 var User = require("./models/user");
 var Blog = require("./models/blog");
@@ -25,6 +30,14 @@ var blogRoute = require("./routes/blog");
 
 
 // APPLICATION CONFIG
+var uri = "mongodb+srv://segunnaike:Nna3k6li5%40@cluster0-q2kxo.mongodb.net/tnm_blog_app;";
+MongoClient.connect(uri, function(err, client) {
+   const collection = client.db("tnm_blog_app").collection("devices");
+   // perform actions on the collection object
+   client.close();
+});
+
+
 mongoose.connect(process.env.DATABASEURL); //used to connect to our database
 app.locals.moment = require("moment"); //used to format dates
 app.set("view engine", "ejs"); //used to create page templates
