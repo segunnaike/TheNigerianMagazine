@@ -26,6 +26,7 @@ var blogRoute = require("./routes/blog");
 
 
 // APPLICATION CONFIG
+//mongoose.connect("mongodb://localhost/tnm_blog_app");
 mongoose.connect(process.env.DATABASEURL); //used to connect to our database
 mongoose.connect("mongodb://segunnaike:Nna3k6li5%40@18.204.248.137/tnm_blog_app");
 app.locals.moment = require("moment"); //used to format dates
