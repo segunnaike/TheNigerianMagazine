@@ -16,6 +16,9 @@ var expressSanitizer    =   require("express-sanitizer"),
 var User = require("./models/user");
 var Blog = require("./models/blog");
 
+//requiring config file
+var config = require("./config/config");
+
 // requiring routes
 var indexRoute = require ("./routes/index");
 //var headlinesRoute = require("./routes/headlines");
@@ -24,13 +27,14 @@ var blogRoute = require("./routes/blog");
 //var latestRoute = require("./routes/latest");
 
 
+var isDev = process.env.NODE_ENV !== "production";
+var port  = process.env.PORT || 8080;
 
 // APPLICATION CONFIG
 //mongoose.connect("mongodb://localhost/tnm_blog_app"); //used to connect to our database
-var url = process.env.DATABASEURL || "mongodb://localhost/tnm_blog_app"; 
-mongoose.connect(url);
-
-mongoose.connect("mongodb://olusegunnaike:Nna3k6li5!@18.204.248.137/thenigerianmagazine_db");
+mongoose.connect(isDev ? config.db_dev : config.db);
+mongoose.Promise = global.Promise;
+//mongoose.connect("mongodb://olusegunnaike:Nna3k6li5!@18.204.248.137/tnm_blog_app");
 app.locals.moment = require("moment"); //used to format dates
 app.set("view engine", "ejs"); //used to create page templates
 app.use(express.static(__dirname + "/public")); //used to tell the app to use the public directory
@@ -68,6 +72,6 @@ app.use(blogRoute);
 
 // app.config
 // ==========
-app.listen(3000, function(){
+app.listen(8080, function(){
     console.log("The Nigerian Magazine App is being served here!");
 });
