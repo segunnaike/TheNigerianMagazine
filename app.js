@@ -26,9 +26,11 @@ var blogRoute = require("./routes/blog");
 
 
 // APPLICATION CONFIG
-//mongoose.connect("mongodb://localhost/tnm_blog_app");
-mongoose.connect(process.env.DATABASEURL); //used to connect to our database
-mongoose.connect("mongodb://segunnaike:Nna3k6li5%40@18.204.248.137/tnm_blog_app");
+//mongoose.connect("mongodb://localhost/tnm_blog_app"); //used to connect to our database
+var url = process.env.DATABASEURL || "mongodb://localhost/tnm_blog_app"; 
+mongoose.connect(url);
+
+mongoose.connect("mongodb://olusegunnaike:Nna3k6li5!@18.204.248.137/thenigerianmagazine_db");
 app.locals.moment = require("moment"); //used to format dates
 app.set("view engine", "ejs"); //used to create page templates
 app.use(express.static(__dirname + "/public")); //used to tell the app to use the public directory
