@@ -63,6 +63,11 @@ app.use(function(req, res, next){
     next();    
 });
 
+app.use(function(req, res, next){
+    res.locals.title = "The Nigerian Magazine";
+    next();
+});
+
 app.use(indexRoute);
 //app.use(headlinesRoute);
 //app.use(fashionRoute);

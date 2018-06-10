@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.js",
-      "start:dev": "node app.js"
+    "start": "node app.js",
+    "start:dev": "node app.js"
   },
   "author": "Olusegun Ogunnaike",
   "license": "ISC",
@@ -22,6 +22,8 @@
     "method-override": "^2.3.10",
     "moment": "^2.20.1",
     "mongoose": "^5.0.1",
+    "mongoose-slug-plugin": "0.0.3",
+    "mongoose-url-slugs": "1.0.2",
     "npm": "5.7.1",
     "passport": "0.4.0",
     "passport-local": "1.0.0",

@@ -1,34 +1,44 @@
 <!--THIS IS USED TO LOGIN USERS/AUTHORS/CONTRIBUTORS INTO THEIR PROFILE PAGES -->
 
-<% include ../partials/header %>
+
+<% include ../partials/form-header %>
 
 
-
-<div class="row">
-    <div class="row">
-        <div class="row">
-            <h1>LOGIN HERE!</h1>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="row">        
-        <form class="user-forms login" action="/login" method="POST">
-           
-            <div class="row">                
-                <input type="text" name="username" placeholder="username">
-            </div>
-            <div class="row">                
-                <input type="password" name="password" placeholder="password">
-            </div>
-                         
+     
+     <div class="row">
+       <form class="login-form" action="/login" method="POST">
+             
+             <h2 class="login-title">Log In</h2>
+              <div class="row">
+                  <div class="col span-3-of-3">
+                      <input type="text" name="username" placeholder="Username" class="login-form">
+                  </div>
+                </div>
+                
             <div class="row">
-                <input type="submit" value="Login">
+               <div class="col span-3-of-3">
+                   <input type="password" name="password" placeholder="Password" class="login-form">
+                </div>
             </div>
-        </form>
-    </div>
-</div>
-
-<% include ../partials/footer %>
+        
+            <div class="row">
+               <div class="col span-3-of-3">
+                   <input type="submit" value="Log In" class="login-form-submit">
+                </div>
+            </div>
+            
+             <div class="row">
+              <div class="col span-3-of-3">
+              <a class="register-here-button" href="/Register">Register A New Account Here</a>
+              </div>
+              </div>
+        </form>     
+        
+           <div class="row">
+               <div class="col span-3-of-3">
+                   <p></p>
+               </div>
+           </div>   
+     </div>
+     
 

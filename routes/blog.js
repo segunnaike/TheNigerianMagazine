@@ -263,10 +263,10 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 // SHOW ROUTE
 // ----------
 // this shows more info about a particular blog post, the continue reading logic
-router.get("/:id", function(req, res){
-   Blog.findById(req.params.id, function(err, foundBlog){
+router.get("/:slug", function(req, res){
+   Blog.findOne({slug: req.params.slug}, function(err, foundBlog){
        if(err || !foundBlog){
-           req.flash("error", "Oopps...something went wrong, please try again");
+//           req.flash("error", "Oopps...something went wrong, please try again");
            res.redirect("back");
        } else {
            res.render("blogs/show", {blog: foundBlog});

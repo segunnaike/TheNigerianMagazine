@@ -19,15 +19,13 @@ var output = {
 // BLOG ROUTES
 // ===============================
 
-// INDEX ROUTE - TO DISPLAY ALL BLOG POSTS AND LAY THEM CORRECTLY ON THE HOME PAGE
-// -------------------------------------------------------------------------------
 router.get("/headlines", function(req, res){    
     output = {    
     headlines: []
 };
     async.parallel([
         function(cb) {
-            Blog.find({"category": "headlines"}).sort({"created": -1}).exec(function(err, headlinesBlogs){
+            Blog.find({"category": "headlines"}).exec(function(err, headlinesBlogs){
                 if (err){
                     console.log(err);                
             } else {

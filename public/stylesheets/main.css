@@ -11,8 +11,8 @@
 
 html,
 body {
-    background-color: #efefef;
-    color: #272727;
+    background-color: #f8fdfa;
+    color: #333;
     font-family: 'Lato', 'Raleway', 'Economica', 'Arial', sans-serif;
     font-weight: 400;
     font-size: 0.9rem; /*base font size = 16px */
@@ -30,17 +30,16 @@ body {
 }
 
 .row {
-    max-width: 95%;
+    max-width: 98%;
     margin: 0 auto;
 }
 
+
 section {
-    border: 1px solid #bfbfbf;
-    padding: 2rem 0;
-    max-width: 80%;
-    margin: 0.25rem auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08); 
-    background-color: #fff;
+    padding: 1rem 0;
+    max-width: 95%;
+    margin: 1% auto;
+    border-bottom: 1px solid #dedcdc;
 }
 
 /* ------------------------------------------------------ */
@@ -63,7 +62,6 @@ section {
     cursor: pointer;
 }
 
-
 /* ------------------------------------------------------ */
 /* HEADER LOGO */
 /* -------------------------------------------------------*/
@@ -79,6 +77,10 @@ section {
 /* HEADER USER INFO MENU */
 /* -------------------------------------------------------*/
  
+.form-header {
+    background-color: #fff;
+}
+
 .userMenu {
     float: right;
     list-style: none;
@@ -117,7 +119,6 @@ section {
     background-color: #93f4bc;    
 }
 
-
 .search {
     position: relative;
     margin-bottom: 10px;
@@ -140,7 +141,7 @@ input {
 
 .search .ion-ios-search {
     position: absolute;
-    top: 5.8px;
+    top: 8px;
     left: 10px;
     font-size: 110%;
     font-weight: 700;       
@@ -269,49 +270,28 @@ nav ul li ul li a:hover {
 
 /* Headline Main */
 
-h1 {
-    text-transform: uppercase;
-    letter-spacing: .2rem; 
-    font-size: 200%;      
-    font-family: "Raleway", "Arial", serif;
+.headline-article {
+    border-bottom: 1px solid #dedcdc;
 }
 
- h1 a:link,
- h1 a:visited {
-    margin-bottom: 1.25rem;
-    text-decoration: none;
-    font-size: 200%;
-    font-weight: 700;
-    font-family: 'Raleway', 'Arial', sans-serif;
-    color: #272727;
-    letter-spacing: 0.25rem;
-    word-spacing: .75rem;
-    border-bottom: .2rem solid transparent;
-    padding-bottom: .75%;
-    -webkit-transition: border-bottom 0.3s;
-    transition: border-bottom 0.3s;
+.section-divider {
+    display: block;
+    height: 0.1rem;
+    border: 0;
+    border-top: 0.1rem solid #ccc;
+    width: 76%;
+    margin: 2rem auto;
+    padding: 0;    
 }
-    
-h1 a:hover,
-h1 a:active {
-    border-bottom: .2rem solid #145b32;
+
+h1, h2 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.55rem;
 }
 
 .headlines-story-container {
-    opacity: 1;
-    padding: 0.6rem;      
-    -webkit-transform: scale(1.0, .95, 1);
-    transform: scale(1.0, .95, 1);
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s; opacity: 0.5s;
-}
-
-.headlines-story-container:hover {
-    opacity: .90;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
+    margin-top: 2rem;
+    padding: 0.4rem;
 }
 
 .headlines-story-container img {
@@ -319,20 +299,19 @@ h1 a:active {
     height: auto;
 }
 
- .hs-category {
+.hs-category {
     padding: 1.5% 0;
-    font-family: "Raleway", "Arial", sans-serif;    
-    font-weight: bold;
-    text-transform: uppercase;
+    font-family: "Lato", "Arial", sans-serif;
+    text-transform: uppercase;    
 }
 
 .hs-category a:link,
 .hs-category a:visited{
     text-decoration: none;
     color: #b9292f;
-    font-size: 125%;
+    font-size: 95%;
     letter-spacing: 0.1rem;
-    line-height: 1.40;
+    line-height: 1.43;
     word-spacing: 0.2rem;
     border-bottom: .01rem solid transparent;
     -webkit-transition: border-bottom 0.2s;
@@ -344,20 +323,16 @@ h1 a:active {
     border-bottom: .01rem solid #b9292f;
 }
 
-.hs-title {
-    font-family: "Raleway", "Arial", sans-serif;
-    font-size: 250%;
-    font-weight: bold;
-    
-}
 .hs-title a:link,
 .hs-title a:visited{
-    font-family: 'Raleway', 'Arial', serif;
+    font-family: 'Lato', 'Arial', serif;
     text-transform: uppercase;
-    text-decoration: none;    
+    text-decoration: none;     
+    font-weight: 700;
     color: #272727;
+    font-size: 200%;
     letter-spacing: 0.1rem;
-    line-height: 1.40;
+    line-height: 1.1;
     word-spacing: 0.2rem;
     border-bottom: 0.2rem solid transparent;
     -webkit-transition: color 0.2s, border-bottom 0.2s;
@@ -372,20 +347,19 @@ h1 a:active {
 .headlines-story-container p {
     font-family: "Raleway", "Arial", sans-serif;
     margin-bottom: 2%;
-    max-width: 100%;
-    font-weight: bold;
+    max-width: 100%;    
     font-size: 115%;
-    line-height: 1.7;
+    line-height: 1.45;
 }
 
 .headlines-story-container p a:link,
 .headlines-story-container p a:visited{
-    font-family: 'Lato', 'Arial', serif;
+    font-family: 'Raleway', 'Arial', serif;
     text-decoration: none;
     font-size: 95%;
+    font-style: italic;
     color: #145b32;
-    letter-spacing: 0.01rem;
-    line-height: 1.7;
+    letter-spacing: 0.01rem;   
     border-bottom: 0.1rem solid transparent;
     -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
@@ -393,7 +367,7 @@ h1 a:active {
 
 .headlines-story-container p a:hover,
 .headlines-story-container p a:active{
-    border-bottom: .01rem solid #145b32;
+    border-bottom: 0.1rem solid #145b32;
 }
 
 .hs-author-box img{
@@ -406,7 +380,8 @@ h1 a:active {
 
 .hs-author-text{
     display: inline-block; 
-    padding-top: 0.5%;
+    padding-top: 2%;
+    padding-bottom: 8%;
     margin-left: -39%;
 }
 
@@ -430,21 +405,14 @@ h1 a:active {
 
 /* Headline Sidebars */
 
-.headlines-sidebar-container {
-    opacity: 1;
-    padding: 0.6rem;      
-    -webkit-transform: scale(1.0, .95, 1);
-    transform: scale(1.0, .95, 1);
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s; opacity: 0.5s;
+.sidebar-article {
+    border-bottom: 1px solid #dedcdc;
+    
 }
 
-.headlines-sidebar-container:hover {
-    opacity: .90;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
+.headlines-sidebar-container {
+    margin-top: 2rem;
+    padding: 0.4rem;
 }
 
 .headlines-sidebar-container img {
@@ -453,10 +421,8 @@ h1 a:active {
 }
 
 .hs-sidebar-category {
-    padding: 2.5% 0;
-    font-family: "Raleway", "Arial", sans-serif;
-    font-size: 90%;
-    font-weight: 700;
+    padding: 1.5% 0;
+    font-family: "Lato", "Arial", sans-serif;      
     text-transform: uppercase;
 }
 
@@ -464,12 +430,13 @@ h1 a:active {
 .hs-sidebar-category a:visited{
     text-decoration: none;
     color: #b9292f;
+    font-size: 95%;
     letter-spacing: 0.1rem;
-    line-height: 145%;
+    line-height: 1.49;
     word-spacing: 0.2rem;
     border-bottom: .01rem solid transparent;
-    -webkit-transition: color 0.3s, border-bottom 0.3s;
-    transition: color 0.3s, border-bottom 0.3s;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
 }
 
 .hs-sidebar-category a:hover,
@@ -478,56 +445,50 @@ h1 a:active {
 }
 
 .hs-sidebar-title {
-    font-family: "Raleway", "Arial", sans-serif;
-    font-size: 115%;
+    font-family: "Lato", "Arial", sans-serif;   
     font-weight: 700;
     padding: 2% 0;
     
 }
 .hs-sidebar-title a:link,
 .hs-sidebar-title a:visited{
-    font-family: 'Raleway', 'Arial', serif;
+    font-family: 'Lato', 'Arial', serif;
     text-transform: uppercase;
-    text-decoration: none;
-    font-size: 115%;
+    text-decoration: none;         
     color: #272727;
+    font-size: 125%;
     letter-spacing: 0.1rem;
-    line-height: 145%;
+    line-height: 1.1;
     word-spacing: 0.2rem;
-    border-bottom: 0.2rem solid transparent;
-    -webkit-transition: color 0.3s, border-bottom 0.3s;
-    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 0.15rem solid transparent;
+    -webkit-transition: color 0.2s, border-bottom 0.2s;
+    transition: color 0.2s, border-bottom 0.2s;
 }
 
 .hs-sidebar-title a:hover,
 .hs-sidebar-title a:active{
-    border-bottom: 0.2rem solid #272727;
+    border-bottom: 0.15rem solid #272727;
 }
 
 .headlines-sidebar-container p {
-    margin-bottom: 1%;
-    font-family: 'Lato', 'Arial', serif;
-    text-decoration: none;
-    font-size: 120%;
-    color: #272727;
-    letter-spacing: 0.01rem;
-    line-height: 1.7;
-    font-weight: 700;
-    max-width: 100%;
+    font-family: "Raleway", "Arial", sans-serif;
+    margin-bottom: 2%;
+    max-width: 100%;    
+    font-size: 115%;
+    line-height: 1.45;
 }
 
 .hs-sidebar-intro a:link,
 .hs-sidebar-intro a:visited{
-    font-family: 'Lato', 'Arial', serif;
+    font-family: 'Raleway', 'Arial', serif;
     text-decoration: none;
     font-size: 95%;
-    font-weight: 700;
+    font-style: italic;
     color: #145b32;
-    letter-spacing: 0.01rem;
-    line-height: 140%;
-    border-bottom: 0.2rem solid transparent;
-    -webkit-transition: color 0.2s, border-bottom 0.2s;
-    transition: color 0.2s, border-bottom 0.2s;
+    letter-spacing: 0.01rem;   
+    border-bottom: 0.1rem solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
 }
 
 .hs-sidebar-intro a:hover,
@@ -539,6 +500,7 @@ h1 a:active {
 .hs-sidebar-author{
     display: inline-block; 
     padding-top: 1.3%;
+    padding-bottom: 8%;
     font-size: 108%;  
 }
 
@@ -559,57 +521,116 @@ h1 a:active {
 
 
 /* ------------------------------------------------------ */
-/* FOOTER LOGO */
+/* TOP STORIES SECTION */
 /* -------------------------------------------------------*/
 
-.footer-logo {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    display: inline-block;
-    width: 150px;
-    margin: 0 auto;
+.around-the-web {
+    font-family: "Raleway", "sans-serif";
+    text-align: center;
+    font-size: 250%;
+    letter-spacing: .05rem;
 }
 
+.middle-article {
+    border-left: 1px solid #dedcdc;
+    border-right: 1px solid #dedcdc;
+    padding-right: 2%;
+    padding-left: 2%;
+}
 
 /* ------------------------------------------------------ */
-/* FOOTER NAVIGATION */
+/* AROUND THE WEB SECTION */
 /* -------------------------------------------------------*/
 
-.footer-nav {
-    background-color: #878e90;
+.box-atw img {
+    max-width: 97%;
+    height: auto;
+    margin-left: 12%;   
 }
 
-.main-nav-footer {
-    list-style: none;
-    padding-bottom: 1%;
-    padding-top: 1%;  
-    text-align: center;
-}
-
-.main-nav-footer li {
-    display: inline-block;
-    margin-right: 1.5rem;
-    
-}
-
-.main-nav-footer li a:link,
-.main-nav-footer li a:visited {
-    color: #fff;
+.atw-story-category {
+    font-family: "Lato", "Arial", sans-serif;    
     text-transform: uppercase;
-    font-weight: normal;
-    letter-spacing: 0.01rem;
-    text-decoration: none;
-    font-size: 90%;
-    font-family: "Economica", "Arial", serif;
-    border-bottom: 0.1rem solid transparent;
-    -webkit-transition: color 0.4s, border-bottom 0.4s;
-    transition: color 0.4s, border-bottom 0.4s;
+    padding-left: 4%;
 }
 
-.main-nav-footer li a:hover,
-.main-nav-footer li a:active {
-    border-bottom: 0.1rem solid #272727;
+.atw-story-category a:link,
+.atw-story-category a:visited {   
+    text-decoration: none;         
+    color: #b9292f;
+    font-size: 115%;
+    letter-spacing: 0.1rem;
+    line-height: 1.45;
+    word-spacing: 0.2rem;
+    border-bottom: 0.15rem solid transparent;
+    -webkit-transition: color 0.2s, border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.atw-story-category a:hover,
+.atw-story-category a:active{
+    border-bottom: 0.15rem solid #b9292f;
+}
+    
+.atw-article-date {
+    display: block;
+    padding-top: 1%;
+    padding-left: 4%;
+    padding-bottom: 2.5%;
+}
+
+.atw-story-title {
+    font-family: "Lato", "Arial", sans-serif;    
+    text-transform: uppercase;
+    padding-left: 4%;
+    padding-bottom: 1%;
+}
+
+.atw-story-title a:link,
+.atw-story-title a:visited {   
+    text-decoration: none;         
     color: #272727;
+    font-size: 135%;    
+    letter-spacing: 0.1rem;
+    line-height: 1.1;
+    word-spacing: 0.2rem;
+    border-bottom: 0.15rem solid transparent;
+    -webkit-transition: color 0.2s, border-bottom 0.2s;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.atw-story-title a:hover,
+.atw-story-title a:active{
+    border-bottom: 0.15rem solid #272727;
+}
+
+.atw-story-intro {
+    font-family: "Raleway", "Arial", sans-serif;
+    padding-bottom: 1%;
+    padding-left: 4%;
+    max-width: 100%;    
+    font-size: 115%;
+    line-height: 1.45;
+    letter-spacing: 0.08rem;
+}
+
+.atw-story-author {
+    display: inline-block;
+    padding-left: 5.2%;
+}
+
+.atw-story-author a:link,
+.atw-story-author a:visited {
+    text-decoration: none;
+    color: #272727;
+    font-size: 155%;
+    border-bottom: 0.02rem solid transparent;
+    transition: border-bottom 0.2s;    
+}
+
+.atw-story-author a:hover,
+.atw-story-author a:active {    
+    border-bottom: 0.02rem solid #272727;    
 }
 
 /* ------------------------------------------------------ */
@@ -619,65 +640,76 @@ h1 a:active {
 
 /* REGISTERATION FORM */
 
-.register-form-section {
-    width: 65%;
-    margin: 1.5rem auto;
-    background-color: #fff;   
-}
-
-.register-form-section .label {
-    padding-top: .95rem;
-}
-
 .register-title {
     text-transform: capitalize;
     text-align: center;
-    padding-top: 1rem; 
+    padding-top: .55rem; 
 }
 
-.register-text {
+.register-text-top {
     text-align: center;
-    padding-top: 1rem; 
-    color: #145b32;   
+    margin-top: -.75rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: .25rem;   
 }
 
 .register-form {
-    width: 80%;
-    margin: 2.5rem auto;
-    padding: 1.125rem 1rem;
-    background-color: #efefef;
-    box-shadow: 3px 3px 3px #767373;
-    font-size: 105%; 
+    display: block;
+    max-width: 46rem;
+    margin: 2rem auto;
+    font-size: 100%;
+    font-family: "Raleway", "Arial", sans-serif;
+    background-color: #fff;
+    border: 1px solid #0b0b0b;
+    box-shadow: 3px 3px 3px #767373; 
 }
 
-.register-form input[type=text], 
-[type=email], 
-input[type=password],
-textarea {
-    width: 90%;
-    height: 2.75rem;
+.reg-form-label {
+    display: block; 
+    padding-left: .6rem;
+    letter-spacing: 0.02rem;
+    font-weight: 700;
+}
+
+
+input.reg-form[type=text], 
+input.reg-form[type=email], 
+input.reg-form[type=password] {
+    display: block;
+    width: 97%;
+    margin-top: -6px;
+    margin-left: auto;
+    margin-right: auto;    
+    height: 3.45rem;
     padding: .4rem;
-    margin-bottom: .3rem;
-    margin-left: 0.15rem;
     border-radius: .25rem;
-    border: 0.08rem solid #ccc;
+    border: 0.1rem solid #ccc;
 }
 
 .register-form textarea {
-    height: 9rem;
+    display: block;
+    height: 12rem;
+    margin-top: -6px;
+    margin-left: -0.3rem;
+    margin-right: auto;
+    margin-bottom: -26px;
+    width: 98%;
+    border: 0.1rem solid #ccc;
+    
 }
 
-.register-form input[type=text]:focus, input[type=password]:focus{
-    background-color: #eafaf1;
+input.reg-form[type=text]:focus, input.reg-form[type=password]:focus, input.reg-form[type=email]:focus{
+    background-color: #efefef;
     outline: none;
 }
 
-.register-form input[type=submit] {
+input.reg-form[type=submit] {
     display: inline-block;
     padding: .625rem 2.1875rem;
+    margin: .5rem 1rem 1rem 0;
     font-size: 105%;
     font-weight: 400;
-    font-family: "Economica", "Arial", sans-serif;
+    font-family: "Raleway", "Arial", sans-serif;
     letter-spacing: .2rem;
     border: 0.1rem solid transparent;
     border-radius: 12.5rem;
@@ -687,8 +719,8 @@ textarea {
     transition: background-color 0.2s border 0.2s color 0.2s   
 }
 
-.register-form input[type=submit]:hover,
-.register-form input[type=submit]:active {
+input.reg-form[type=submit]:hover,
+input.reg-form[type=submit]:active {
     border: 0.1rem solid #145b32;
     color: #145b32;
     background-color: #a5ebc2;
@@ -699,7 +731,7 @@ textarea {
     padding: .625rem 2.1875rem;
     font-size: 105%; 
     font-weight: 400;
-    font-family: "Economica", "Arial", sans-serif;
+    font-family: "Raleway", "Arial", sans-serif;
     letter-spacing: .2rem;
     border: 0.1rem solid transparent;
     border-radius: 12.5rem; 
@@ -716,25 +748,102 @@ textarea {
     background-color: #eaa2a5;    
 }
 
-.register-form label {
-    font-weight: 400;
-    font-size: 100%;   
-    letter-spacing: 0.075rem;
-    line-height: 1.25;
+.register-text-bottom {
+    text-align: left;
+    margin-top: -.75rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    padding-bottom: .25rem;   
 }
 
+.register-text-bottom a {
+    text-decoration: none;
+    border: 0.1rem solid transparent;
+    transition: border-bottom 0.2s 
+}
+
+.register-text-bottom a:hover, 
+.register-text-bottom a:active {
+    border-bottom: 0.1rem solid blue;    
+}
+
+
+
+/* LOGIN FORM */
+
+.login-title {
+    text-transform: capitalize;    
+    text-align: center;
+    padding: .75rem; 
+}
+
+.login-form {
+    display: block;
+    font-size: 105%;
+    font-family: "Lato", "Arial", sans-serif;
+    max-width: 32rem;      
+    margin: 3rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1.25px solid #0b0b0b;
+}
+
+ input.login-form[type=text], input.login-form[type=password] {
+    width: 100%;
+    height: 3.45rem;
+    padding: .5rem;
+    margin: 1rem auto;    
+    border-radius: .25rem;
+    border: .15rem solid #0b0b0b;
+}
+
+
+ input.login-form[type=text]:focus, input.login-form[type=password]:focus {
+    background-color: #eaeaea;
+    outline: none;
+}
+
+input.login-form-submit[type=submit] {
+    display: inline-block;
+    width: 100%;
+    height: 3.45rem;
+    border-radius: .25rem;
+    margin: 1rem auto; 
+    font-weight: 400;
+    font-family: "Lato", "Arial", sans-serif;
+    border: 0.1rem solid transparent;    
+    background-color: #145b32;   
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s border 0.2s color 0.2s   
+}
+
+input.login-form-submit[type=submit]:hover,
+input.login-form-submit[type=submit]:active {
+    border: 0.1rem solid #145b32;
+    color: #145b32;
+    background-color: #a5ebc2;
+}
+
+.login-form a {
+    display: block;
+    text-decoration: none;
+    height: 3.45rem;
+    border-radius: .25rem;
+    font-size: 125%
+}
+
+.register-here-button{
+    background-color: #3366f2;
+    border-radius: 5px;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin: auto 0;
+}
 
 /* SUBMIT A STORY FORM */
 
-.new-article-form-section {
-    width: 80%;
-    margin: 1.5rem auto;
-    background-color: #fff;   
-}
-
-.new-article-form-section .label {
-    padding-top: .95rem;
-}
 
 .submit-your-story-title {
     text-transform: capitalize;
@@ -749,17 +858,19 @@ textarea {
 }
 
 .new-article-form {
-    width: 85%;
-    margin: 2.5rem auto;
-    padding: 1.125rem 1rem;
-    background-color: #efefef;
-    box-shadow: 3px 3px 3px #767373;
-    font-size: 105%; 
+    display: block;
+    width: 35%;
+    margin: 2rem auto;
+    font-size: 100%;
+    font-family: "Raleway", "Arial", sans-serif;
+    background-color: #fff;
+    border: 1px solid #0b0b0b;
+    box-shadow: 3px 3px 3px #767373; 
 }
 
 .new-article-form input[type=text], 
 [type=email], 
-input[type=password],
+/*input[type=password],*/
 textarea {
     width: 90%;
     height: 2.75rem;
@@ -844,10 +955,7 @@ textarea {
     font-size: 105%; 
 }
 
-.edit-article-form input[type=text], 
-[type=email], 
-input[type=password],
-textarea {
+.edit-article-form input[type=text], [type=email], /*input[type=password],*/ textarea {
     width: 90%;
     height: 2.75rem;
     padding: .75rem;
@@ -906,47 +1014,55 @@ textarea {
 /* SHOW PAGE */
 /* -------------------------------------------------------*/
 
+.show-page {
+    width: 90%;
+}
+
 .story-divider {
-    width: 85%;
-    margin: 0 2.6%;
+    width: 100%;
+    margin: 2.3% auto;
     border: 0;
     height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc)
+    background: #ccc;
+    background-image: linear-gradient(to right, #dedcdc, #ccc, #dedcdc)
 }
 
 .article-category a {
     text-transform: uppercase;
+    font-size: 110%;
+    letter-spacing: 0.04rem;
     text-decoration: none;
     color: #b9292f;
-    border-bottom: 0.01rem solid transparent;
+    border-bottom: 0.02rem solid transparent;
     transition: border-bottom 0.2s
 }
 
 .article-category a:hover,
 .article-category a:active {
-    border-bottom: 0.01rem solid #b9292f;
+    border-bottom: 0.02rem solid #b9292f;
 }
 
 .article-title {
-    max-width: 85%;
-    padding: 1rem 0rem;
+    max-width: 100%;
+    padding: 0.5rem 0rem;
     font-size: 400%;
-    font-family: "Raleway", "Arial", sans-serif;
-    line-height: 1.25;
+    font-family: "Lato", "Arial", sans-serif;
+    line-height: 1.45;
+    text-transform: capitalize;
+    letter-spacing: 0.04rem;
  }
 
 .authorProfilePicture {
     float: left;    
     border-radius: 50%;
-    width: 3.5%; 
-    margin-bottom: 1%;
+    width: 4.5%; 
+    margin-bottom: 2.5%;
 }
 
 .authorName{
     display: inline-block;
-    margin-top: 1.6%;
-    margin-left: 1.5%;    
+    margin-top: 1.8%;
+    margin-left: 1.65%;    
 }
 
 .authorName a {
@@ -955,33 +1071,35 @@ textarea {
     font-family: "Raleway", "Arial", sans-serif;
     font-weight: bold;
     padding-bottom: 0.01rem;
-    border-bottom: 0.01rem solid transparent;
+    border-bottom: 0.02rem solid transparent;
     transition: border-bottom 0.2s
 }
 
 .authorName a:hover,
 .authorName a:active {
-    border-bottom: 0.01rem solid #272727;
+    border-bottom: 0.02rem solid #272727;
 }
 
 .articleDate {
     display: inline-block;
-    padding-left: .25%;
+    padding-left: 0.1rem;
 }
 
 .imageOne {
-    max-width: 60%;
-    padding: 1%;
-    margin-left: 1.5%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: auto 1%;    
 }
 
 .story-lead p {
     color: #272727;
-    font-family: "Lato", "Arial", sans-serif;
-    max-width: 58%;
-    font-size: 125%;
-    line-height: 1.43; 
-    margin-left: 2.3%;
+    font-family: "Raleway", "Arial", serif;
+    margin: 0 auto;
+    max-width: 67%;
+    font-size: 135%;
+    line-height: 1.49;
+    padding: 2% 0;
 }
 
 .story-lead p a{
@@ -1020,9 +1138,9 @@ input[type=submit]:active {
 }
 
 .editBtn {    
-    display: inline-block;
-    margin-left: 2%;
+    display: inline-block;    
     margin-top: 1%;
+    margin-left: 16.5%;
     padding: .425rem 1rem;
     font-size: 105%; 
     font-weight: 400;
@@ -1042,5 +1160,60 @@ input[type=submit]:active {
     color: #272727;
     background-color: #9bd1fb;    
 }
+
+/* ------------------------------------------------------ */
+/* FOOTER LOGO */
+/* -------------------------------------------------------*/
+
+.footer-logo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: inline-block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------------------------------ */
+/* FOOTER NAVIGATION */
+/* -------------------------------------------------------*/
+
+.footer-nav {
+    background-color: #878e90;
+}
+
+.main-nav-footer {
+    list-style: none;
+    padding-bottom: 1%;
+    padding-top: 1%;  
+    text-align: center;
+}
+
+.main-nav-footer li {
+    display: inline-block;
+    margin-right: 1.5rem;
+    
+}
+
+.main-nav-footer li a:link,
+.main-nav-footer li a:visited {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.01rem;
+    text-decoration: none;
+    font-size: 90%;
+    font-family: "Economica", "Arial", serif;
+    border-bottom: 0.1rem solid transparent;
+    -webkit-transition: color 0.4s, border-bottom 0.4s;
+    transition: color 0.4s, border-bottom 0.4s;
+}
+
+.main-nav-footer li a:hover,
+.main-nav-footer li a:active {
+    border-bottom: 0.1rem solid #272727;
+    color: #272727;
+}
+
 
 

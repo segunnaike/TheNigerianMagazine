@@ -8,7 +8,7 @@ var Blog = require("../models/blog");
 
 // to show form to register new user
 router.get("/register", function(req, res){
-   res.render("users/register"); 
+   res.render("users/register", {title: "Author Registeration: The Nigerian Magazine"}); 
 });
 
 // to handle registeration logic
@@ -43,7 +43,7 @@ router.post("/register", function(req, res){
 // ================
 // to show login form
 router.get("/login", function(req, res){
-   res.render("users/login"); 
+   res.render("users/login", {title: "Author Registeration: The Nigerian Magazine"}); 
 });
 
 // to handle login logic

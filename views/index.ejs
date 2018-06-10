@@ -3,25 +3,27 @@
 
 
 <!--THIS IS THE HOME PAGE!-->
-<section class="headlines-section">
-
+<section class="headlines">
 <div class="row">    
     <% businessBlogs.forEach(function(blog){ %> 
-    <div class="col span-1-of-4 headlines-sidebar-container">
+    <div class="col span-1-of-4 headlines-sidebar-container sidebar-article">
         <img src="<%= blog.imageOne %>">
-        <p class="hs-sidebar-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-        <h3 class="hs-sidebar-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h4 class="hs-sidebar-category"><a href="/<%= blog.slug %>"><%=blog.category%></a></h4>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
         <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
-    </div>
+        
+    </div>    
 <% }); %>
+   
+
     
 <% headlinesBlogs.forEach(function(blog){ %> 
-    <div class="col span-2-of-4 headlines-story-container">
-        <img class="headline-image" src="<%= blog.imageOne %>">        
+    <div class="col span-2-of-4 headlines-story-container headline-article">
+        <a href="/<%= blog.slug %>"><img class="headline-image" src="<%= blog.imageOne %>"></a>        
         <h4 class="hs-category"><a href="/headlines"><%=blog.category%></a></h4>        
-        <h3 class="hs-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-        <p class="hs-story-intro"><%- blog.body.substring(0, 250) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->        
+        <h2 class="hs-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h2>
+        <p class="hs-story-intro"><%- blog.body.substring(0, 180) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->        
         
         <div class="col span-1-of-2 hs-author-box">
             <a href="/"><img src="<%=blog.author.profilePicture %>"></a>
@@ -32,141 +34,185 @@
         </div>
             
         <!-- <p class="date">Published:\ <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></p> --> <!--the doDateString method converts date to a more human friendly dates, the momentJS library converts date strings into customized dates -->
-         
-        
+    
+     
     </div>
+    
 <% }); %>
     
 <% newsBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-4 headlines-sidebar-container sidebar-article">
+        <img src="<%= blog.imageOne %>">
+        <h4 class="hs-sidebar-category"><a href="/<%= blog.slug %>"><%=blog.category%></a></h4>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
+       
+    </div>
+<% }); %>
+
+    <% politicsBlogs.forEach(function(blog){ %> 
     <div class="col span-1-of-4 headlines-sidebar-container">
         <img src="<%= blog.imageOne %>">
-        <p class="hs-sidebar-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-        <h3 class="hs-sidebar-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h4 class="hs-sidebar-category"><a href="/<%= blog.slug %>"><%=blog.category%></a></h4>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
+        
+    </div>
+<% }); %> 
+    </div>
+</section>
+
+<section>      
+       <div class="row">
+           <h1 class="around-the-web">Top Stories</h1>
+       </div>
+</section>
+
+<section class="section-top-stories">
+    <div class="row">
+<% opinionsBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-3 headlines-sidebar-container">
+        <img src="<%= blog.imageOne %>">
+        <h4 class="hs-sidebar-category"><a href="/<%= blog.slug %>"><%=blog.category%></a></h4>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
         <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
     </div>
 <% }); %>
-    
-     <% politicsBlogs.forEach(function(blog){ %> 
-    <div class="col span-1-of-4 headlines-sidebar-container">
-        <img src="<%= blog.imageOne %>">        
-        <p class="hs-sidebar-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-        <h3 class="hs-sidebar-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
-        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
-    </div>
-<% }); %> 
 
+<% fashionBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-3 headlines-sidebar-container middle-article">
+        <img src="<%= blog.imageOne %>">
+        <h4 class="hs-sidebar-category"><a href="/<%= blog.slug %>"><%=blog.category%></a></h4>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
+    </div>
+<% }); %>
+
+<% sportsBlogs.forEach(function(blog){ %> 
+    <div class="col span-1-of-3 headlines-sidebar-container">
+        <img src="<%= blog.imageOne %>">
+        <h4 class="hs-sidebar-category"><a href="/<%= blog.slug %>"><%=blog.category%></a></h4>
+        <h3 class="hs-sidebar-title"><a href="/<%= blog.slug %>"><%=blog.title%></a></h3>
+        <p class="hs-sidebar-intro"><%- blog.body.substring(0, 100) %>... <a href="/<%= blog.slug %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+        <h6 class="hs-sidebar-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName + " " + blog.author.lastName%></a></h6>
+    </div>
+<% }); %>
 </div>
 </section>
 
-<section class="whats-hot">
-      <div class="row">
+
+<section>      
        <div class="row">
-           <h1>What's Hot</h1>
+           <h1 class="around-the-web">Around The Web</h1>
        </div>
-       
+</section>
+      
+<section class="section-around-the-web"> 
        <div class="row">
        <% sportsBlogs.forEach(function(blog){ %>
        
-       <div class="col span-1-of-4">
-           <img src="<%= blog.imageOne %>">
+       <div class="col span-1-of-3 box-atw">
+           <a href=#> <img src="<%= blog.imageOne %>"></a>
        </div>
        
-       <div class="col span-2-of-4">
-           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
-           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       <div class="col span-2-of-3">
+           <p class="atw-story-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="atw-article-date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class="atw-story-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class="atw-story-intro"><%- blog.body.substring(0, 200) %></p> <!--the substring method limits the characters displayed on the body -->
        </div>
         
-        <div class="col span-1-of-2"> 
-            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        <div class="col span-1-of-2 author-text"> 
+            <h6 class="atw-story-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
         </div>
         <% }); %>
         </div>
         
-        <div class="row">
+       <div class="row">
        <% fashionBlogs.forEach(function(blog){ %>
        
-       <div class="col span-1-of-4">
-           <img src="<%= blog.imageOne %>">
+       <div class="col span-1-of-3 box-atw">
+           <a href=#> <img src="<%= blog.imageOne %>"></a>
        </div>
        
-       <div class="col span-2-of-4">
-           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
-           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       <div class="col span-2-of-3">
+           <p class="atw-story-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="atw-article-date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class="atw-story-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class="atw-story-intro"><%- blog.body.substring(0, 200) %></p> <!--the substring method limits the characters displayed on the body -->
        </div>
         
-        <div class="col span-1-of-2"> 
-            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        <div class="col span-1-of-2 author-text"> 
+            <h6 class="atw-story-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
         </div>
         <% }); %>
         </div>
         
-        <div class="row">
+               <div class="row">
        <% entertainmentBlogs.forEach(function(blog){ %>
        
-       <div class="col span-1-of-4">
-           <img src="<%= blog.imageOne %>">
+       <div class="col span-1-of-3 box-atw">
+           <a href=#> <img src="<%= blog.imageOne %>"></a>
        </div>
        
-       <div class="col span-2-of-4">
-           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
-           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       <div class="col span-2-of-3">
+           <p class="atw-story-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="atw-article-date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class="atw-story-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class="atw-story-intro"><%- blog.body.substring(0, 200) %></p> <!--the substring method limits the characters displayed on the body -->
        </div>
         
-        <div class="col span-1-of-2"> 
-            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        <div class="col span-1-of-2 author-text"> 
+            <h6 class="atw-story-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
         </div>
         <% }); %>
         </div>
         
-        <div class="row">
+               <div class="row">
        <% religionBlogs.forEach(function(blog){ %>
        
-       <div class="col span-1-of-4">
-           <img src="<%= blog.imageOne %>">
+       <div class="col span-1-of-3 box-atw">
+           <a href=#> <img src="<%= blog.imageOne %>"></a>
        </div>
        
-       <div class="col span-2-of-4">
-           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
-           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       <div class="col span-2-of-3">
+           <p class="atw-story-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="atw-article-date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class="atw-story-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class="atw-story-intro"><%- blog.body.substring(0, 200) %></p> <!--the substring method limits the characters displayed on the body -->
        </div>
         
-        <div class="col span-1-of-2"> 
-            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        <div class="col span-1-of-2 author-text"> 
+            <h6 class="atw-story-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
         </div>
         <% }); %>
         </div>
         
-        <div class="row">
+            <div class="row">
        <% cultureBlogs.forEach(function(blog){ %>
        
-       <div class="col span-1-of-4">
-           <img src="<%= blog.imageOne %>">
+       <div class="col span-1-of-3 box-atw">
+           <a href=#> <img src="<%= blog.imageOne %>"></a>
        </div>
        
-       <div class="col span-2-of-4">
-           <p><a href="/<%= blog._id %>"><%=blog.category%></a></p>
-           <span class="article_Date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
-           <h3 class=""><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
-           <p class=""><%- blog.body.substring(0, 350) %>... <a href="/<%= blog._id %>">Continue Reading</a></p> <!--the substring method limits the characters displayed on the body -->
+       <div class="col span-2-of-3">
+           <p class="atw-story-category"><a href="/<%= blog._id %>"><%=blog.category%></a></p>
+           <span class="atw-article-date">&#124; <%= moment(blog.created).format("dddd, MMMM Do, YYYY") %></span>
+           <h3 class="atw-story-title"><a href="/<%= blog._id %>"><%=blog.title%></a></h3>
+           <p class="atw-story-intro"><%- blog.body.substring(0, 200) %></p> <!--the substring method limits the characters displayed on the body -->
        </div>
         
-        <div class="col span-1-of-2"> 
-            <h4 class=""><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h4>
+        <div class="col span-1-of-2 author-text"> 
+            <h6 class="atw-story-author"><a href="/users/<%= blog.author.id %>">By <%=blog.author.firstName%> <%=blog.author.lastName%></a></h6>
         </div>
         <% }); %>
         </div>
-    </div>
 </section>
+
 
 
 

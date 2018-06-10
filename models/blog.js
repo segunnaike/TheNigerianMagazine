@@ -1,4 +1,6 @@
 var mongoose = require("mongoose");
+var mongooseSlugPlugin = require("mongoose-slug-plugin");
+var moment = require("moment");
 
 
 var blogSchema = new mongoose.Schema({
@@ -18,6 +20,11 @@ var blogSchema = new mongoose.Schema({
         lastName: String,
         profilePicture: String        
     }
+});
+
+blogSchema.plugin(mongooseSlugPlugin, {
+    tmpl: "<%=category%>'/'<%=moment(created).format('YYYY-MM-DD')%>'/'<%=title%>",
+    locals: { moment }
 });
 
 module.exports = mongoose.model("Blog", blogSchema);

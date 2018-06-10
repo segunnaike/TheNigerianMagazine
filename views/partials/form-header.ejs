@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Nigerian Magazine is an online magazine of commentary, criticisms, cartoons, infographics, essays, fiction, satire, poetry and reportage about Nigeria and Nigerians, home and abroad. We are committed to help build an egalitarian society that promotes social justice, peace, prosperity and unity. Through a fair and balanced reporting, we hope to make our leaders give account of their stewardship, and teach citizens to ask pertinent and probing questions about how they are governed. Our articles and contents cover an eclectic array of topics, with a greater focus on issues that touch the lives of Nigerians at home and abroad.">      
+        <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/grid.css">       
+        <link rel="stylesheet" type="text/css" href="/stylesheets/ionicons.min.css">       
+        <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">                       
+        <link rel="stylesheet" type="text/css" href="/stylesheets/inner.css"> 
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Economica:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"> 
+        <title><%= title%></title>        
+    </head>
+    <!--END OF HEAD SECTION-->
+   
+    <!--START OF BODY SECTION-->
+    <body>
+        <header class="form-header">   
+                <a href="/"><img class="header-logo" alt="The Nigerian Magazine Logo" src="/img/Logo_Official.png"></a>
+        </header>
+        
+        <div class="row">
+            
+            <% if(error && error.length > 0){ %>
+            <div class="row error-message">
+                <h3><%= error %></h3>
+            </div>
+            <% } %>
+            
+            <% if(success && success.length > 0){ %>
+            <div class="row success-message">
+                <h3><%= success %></h3>
+            </div>
+            <% } %>            
+        </div>
+    </body>
+</html>
